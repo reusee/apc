@@ -74,9 +74,7 @@ func eval(expr ast.Expr) (*big.Rat, error) {
 			return v, nil
 		// sub
 		case token.SUB:
-			negb := new(big.Rat)
-			negb.Neg(b)
-			v.Add(a, negb)
+			v.Sub(a, b)
 			return v, nil
 		// mul
 		case token.MUL:
